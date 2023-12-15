@@ -1,15 +1,16 @@
-import { Text } from "react-native";
 import React from "react";
-import { MotiView } from "moti";
+
+import * as S from "./styles";
 
 export function Title() {
   return (
-    <MotiView
-      from={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ type: "timing" }}
-    >
-      <Text>Titulo</Text>
-    </MotiView>
+    <>
+      <S.AnimatedText transition={{ type: "timing" }}>
+        Find the best
+      </S.AnimatedText>
+      <S.AnimatedText transition={{ type: "timing", delay: 50 }}>
+        coffee for you
+      </S.AnimatedText>
+    </>
   );
 }
