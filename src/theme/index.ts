@@ -21,12 +21,9 @@ export default {
   },
 
   fonts: {
-    R_400: "Roboto_400Regular",
-    R_500: "Roboto_500Medium",
-    DM_500: "DMSans_500Medium",
-    H_700: "Helvetica_700Bold",
-    H_500: "Helvetica_500Medium",
-    H_400: "Helvetica_400Regular",
-    H_300: "Helvetica_300Light",
+    P_300: "Poppins_300Light",
+    P_400: "Poppins_400Regular",
+    P_500: "Poppins_500Medium",
+    P_600: "Poppins_600SemiBold",
   },
 };

@@ -6,13 +6,14 @@
     "orientation": "portrait",
     "scheme": "coffee-shop-navigation-scheme",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#141921"
     },
     "assetBundlePatterns": ["**/*"],
+    "backgroundColor": "#141921",
     "ios": {
       "supportsTablet": true
     },
@@ -21,6 +22,11 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       }
+    },
+    "androidStatusBar": {
+      "backgroundColor": "#141921",
+      "barStyle": "light-content",
+      "translucent": false
     },
     "web": {
       "favicon": "./assets/favicon.png"
