@@ -1,14 +1,14 @@
-import { SafeAreaView } from "react-native";
+import { Title } from "./components";
+import { SafeAreaByOS } from "~/components";
 
 import * as S from "./styles";
-import { Title } from "./components";
 
 export function HomePage() {
   return (
-    <SafeAreaView>
+    <SafeAreaByOS>
       <S.Container>
         <Title />
       </S.Container>
-    </SafeAreaView>
+    </SafeAreaByOS>
   );
 }
