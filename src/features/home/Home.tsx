@@ -18,9 +18,15 @@ export function HomePage() {
   const scrollRef = useRef<ScrollView>(null);
 
   function onSelectOption(index) {
+    let scrollTo = 0;
+
+    if (index !== 0) {
+      scrollTo = headerOffset.current + 450 * index;
+    }
+
     scrollRef.current.scrollTo({
       animated: true,
-      y: headerOffset.current + 450 * index,
+      y: scrollTo,
     });
   }
 
