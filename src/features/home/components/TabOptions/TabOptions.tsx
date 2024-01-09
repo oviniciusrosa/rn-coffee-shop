@@ -23,6 +23,8 @@ export function TabOptions({ onSelectOption }: Props) {
       renderItem={({ item }) => (
         <Option item={item} onSelectOption={onSelectOption} />
       )}
+      /// Overrides Scroll Failure
+      onScrollToIndexFailed={(info) => null}
     />
   );
 }

@@ -11,6 +11,8 @@ import { SafeAreaByOS } from "~/components";
 
 import * as S from "./styles";
 
+const HEADER_HEIGHT = 80;
+
 export function HomePage() {
   const [isHeaderSticked, setIsHeaderSticked] = useState(false);
   const headerOffset = useRef<any>(null);
@@ -30,6 +32,16 @@ export function HomePage() {
     });
   }
 
+  function scrollInterceptor({ isScrollUp = false }) {
+    return ({ nativeEvent }) => {
+      const calcHeaderHeight = isScrollUp
+        ? headerOffset.current - HEADER_HEIGHT
+        : headerOffset.current + HEADER_HEIGHT;
+
+      setIsHeaderSticked(nativeEvent.contentOffset.y >= calcHeaderHeight);
+    };
+  }
+
   return (
     <>
       <SafeAreaByOS>
@@ -37,12 +49,9 @@ export function HomePage() {
           ref={scrollRef}
           contentInsetAdjustmentBehavior="automatic"
           showsVerticalScrollIndicator={false}
-          scrollEventThrottle={16}
-          onScroll={({ nativeEvent }) => {
-            setIsHeaderSticked(
-              nativeEvent.contentOffset.y >= headerOffset.current + 80
-            );
-          }}
+          scrollEventThrottle={4}
+          onScrollToTop={scrollInterceptor({ isScrollUp: true })}
+          onScroll={scrollInterceptor({})}
         >
           <S.Container
             onLayout={(event) => {
