@@ -4,7 +4,11 @@ import { Option } from "./Option";
 import * as S from "./styles";
 import { useTabOptions } from "./useTabOptions";
 
-export function TabOptions() {
+interface Props {
+  onSelectOption: (index: number) => void;
+}
+
+export function TabOptions({ onSelectOption }: Props) {
   const { listRef, categories } = useTabOptions();
 
   return (
@@ -16,7 +20,9 @@ export function TabOptions() {
       keyExtractor={(item) => item.id.toString()}
       ItemSeparatorComponent={() => <EmptyBox width={20} />}
       contentContainerStyle={{ paddingHorizontal: 25 }}
-      renderItem={({ item }) => <Option item={item} />}
+      renderItem={({ item }) => (
+        <Option item={item} onSelectOption={onSelectOption} />
+      )}
     />
   );
 }
