@@ -16,7 +16,11 @@ export function useTabOptions() {
   }, []);
 
   useEffect(() => {
-    if (filteringBy && listRef.current) {
+    if (filteringBy !== null && listRef.current) {
+      if (filteringBy === 0) {
+        return listRef.current.scrollToOffset({ offset: 0, animated: true });
+      }
+
       listRef.current.scrollToIndex({ index: filteringBy, animated: true });
     }
   }, [filteringBy]);
