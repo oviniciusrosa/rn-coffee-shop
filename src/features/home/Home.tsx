@@ -10,6 +10,7 @@ import {
 import { SafeAreaByOS } from "~/components";
 
 import * as S from "./styles";
+import { View } from "react-native";
 
 const HEADER_HEIGHT = 80;
 
@@ -23,7 +24,7 @@ export function HomePage() {
     let scrollTo = 0;
 
     if (index !== 0) {
-      scrollTo = headerOffset.current + 450 * index;
+      scrollTo = headerOffset.current + 350 * index;
     }
 
     scrollRef.current.scrollTo({
@@ -60,6 +61,9 @@ export function HomePage() {
             }}
           >
             <Title />
+            <View
+              style={{ height: 45, backgroundColor: "#AAA", marginTop: 25 }}
+            />
             {/* TODO: [ ] SEARCH BAR W/ SEARCH SCREEN */}
           </S.Container>
 

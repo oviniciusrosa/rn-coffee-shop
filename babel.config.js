@@ -10,11 +10,11 @@ module.exports = function (api) {
         {
           root: ["./src"],
           alias: {
-            "react-native-sqlite-storage": "react-native-quick-sqlite",
             "~/assets": "./src/assets/",
             "~/contexts": "./src/contexts/",
             "~/components": "./src/components/",
             "~/constants": "./src/constants/",
+            "~/data": "./src/data/",
             "~/external": "./src/external/",
             "~/features": "./src/features/",
             "~/store": "./src/store/",

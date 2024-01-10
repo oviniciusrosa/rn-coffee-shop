@@ -1,8 +1,8 @@
 import { EmptyBox } from "~/components";
 import { Option } from "./Option";
+import { useTabOptions } from "../../hooks/useTabOptions";
 
 import * as S from "./styles";
-import { useTabOptions } from "./useTabOptions";
 
 interface Props {
   onSelectOption: (index: number) => void;

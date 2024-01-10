@@ -1,16 +1,28 @@
 import InView from "react-native-component-inview";
 
 import { useCategories } from "~/store/categories";
+import { Text, View } from "moti";
+
+import { ProductCard } from "../ProductCard";
+
+import { useMemo } from "react";
+import { useFetchProduct } from "../../hooks/useFetchProduct";
 
 import * as S from "./styles";
-import { View } from "react-native";
 
-interface Props {
-  index;
-}
+type Props = { index: number };
 
-export function SectionContent({ index }) {
+export function SectionContent({ index }: Props) {
+  const products = useFetchProduct(index);
+
+  const categories = useCategories((state) => state.categories);
+  const category = useMemo(
+    () => categories.find((category) => category.id === index),
+    [categories]
+  );
+
   const changeFilter = useCategories((state) => state.changeFilter);
+  const delay = (index + 1) * 100;
 
   return (
     <InView
@@ -19,13 +31,17 @@ export function SectionContent({ index }) {
         if (isVisible) changeFilter(index);
       }}
     >
-      <View
-        style={{
-          height: 400,
-          backgroundColor: index % 2 === 0 ? "pink" : "cyan",
-          margin: 25,
-        }}
-      />
+      <S.Container transition={{ type: "timing", delay }}>
+        <S.Title>{category?.name}</S.Title>
+
+        <S.ProductList
+          data={products}
+          keyExtractor={({ id }) => id.toString()}
+          renderItem={({ item, index: itemIndex }) => (
+            <ProductCard product={item} index={itemIndex} />
+          )}
+        />
+      </S.Container>
     </InView>
   );
 }
