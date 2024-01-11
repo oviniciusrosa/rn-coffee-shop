@@ -22,7 +22,9 @@ export function ProductCard({ product, index }: Props) {
   })();
 
   return (
-    <S.Container transition={{ type: "spring", delay: (index + 1) * 50 }}>
+    <S.Container
+      transition={{ type: "timing", delay: (index + 1) * 200, duration: 200 }}
+    >
       <S.Background
         colors={["#252A32", "#252A32", "rgba(0, 0, 0, 0.00)"]}
         start={{ x: 0, y: 0 }}

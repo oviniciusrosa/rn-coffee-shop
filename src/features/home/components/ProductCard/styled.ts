@@ -3,10 +3,10 @@ import { View } from "moti";
 import { Image, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
-const INIT_STYLE = { opacity: 0, transform: [{ translateX: 50 }] };
+const INIT_STYLE = { opacity: 0, transform: [{ translateX: 30 }] };
 const IN_SCREEN_STYLE = { opacity: 1, transform: [{ translateX: 0 }] };
 
-export const Container = styled(View).attrs({
+export const Container: typeof View = styled(View).attrs({
   from: INIT_STYLE,
   animate: IN_SCREEN_STYLE,
 })`

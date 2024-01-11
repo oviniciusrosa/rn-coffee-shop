@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 export const TabOptionsList: typeof FlatList = styled.FlatList`
   background-color: #141921;
   padding-vertical: 10px;
-  margin-top: 25px;
+  padding-top: 5px;
 `;
 
 export const OptionLabel: typeof Text = styled(Text)`
