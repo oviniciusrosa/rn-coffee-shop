@@ -1,6 +1,7 @@
 import { View } from "moti";
 import { TextInput } from "react-native";
 import styled from "styled-components/native";
+import theme from "~/theme";
 
 const INIT_STYLE = { opacity: 0, transform: [{ translateY: 30 }] };
 const IN_SCREEN_STYLE = { opacity: 1, transform: [{ translateY: 0 }] };
@@ -21,7 +22,9 @@ export const Container = styled(View).attrs({
   margin-top: 25px;
 `;
 
-export const Input: typeof TextInput = styled.TextInput`
+export const Input: typeof TextInput = styled.TextInput.attrs({
+  placeholderTextColor: theme.colors.grey_60,
+})`
   flex: 1;
   color: ${({ theme }) => theme.colors.white};
 `;
