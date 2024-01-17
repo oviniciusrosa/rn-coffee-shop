@@ -1,7 +1,7 @@
 import { useRef } from "react";
 
-import { View, VirtualizedList } from "react-native";
-import { SectionContent, TabOptions, Title } from "./components";
+import { VirtualizedList } from "react-native";
+import { Search, SectionContent, TabOptions, Title } from "./components";
 import { SafeAreaByOS } from "~/components";
 
 import * as S from "./styles";
@@ -31,13 +31,7 @@ export function HomePage() {
           ListHeaderComponent={
             <S.Container>
               <Title />
-              <View
-                style={{
-                  height: 45,
-                  backgroundColor: "#AAA",
-                  marginTop: 25,
-                }}
-              />
+              <Search />
             </S.Container>
           }
           stickyHeaderIndices={[1]}

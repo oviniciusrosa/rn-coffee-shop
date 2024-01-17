@@ -3,7 +3,7 @@ import { FlatList } from "react-native";
 import styled from "styled-components/native";
 
 export const TabOptionsList: typeof FlatList = styled.FlatList`
-  background-color: #141921;
+  background-color: #0c0f14;
   padding-vertical: 10px;
   padding-top: 5px;
 `;
